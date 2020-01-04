@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Hero from './layout/hero/Hero';
+import Header from './layout/header/Header';
+import Bmi from './layout/bmi/Bmi';
+import styled from 'styled-components';
+import Faq from './layout/faq/Faq';
+import Footer from './layout/footer/Footer';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AppRoot = styled.div``;
+
+class App extends React.Component {
+  render() {
+    return (
+      <AppRoot>
+        <Hero></Hero>
+        <div className="mb-5">
+          <Header title='BMI Kollen'></Header>
+        </div>
+        <div className="mb-20 container mx-auto px-10">
+          <Bmi></Bmi>
+        </div>
+        <div className="mb-20 container mx-auto">
+          <Faq></Faq>
+        </div>
+        <Footer></Footer>
+      </AppRoot>
+    );
+  }
+
 }
 
 export default App;
